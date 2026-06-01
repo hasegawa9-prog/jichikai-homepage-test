@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>行事予定 | 葉鹿下町自治会</title>
+    <meta
+      name="description"
+      content="葉鹿下町自治会の月間予定、清掃、防災、会議、地域行事を確認できるページ。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="メインメニュー">
+        <a class="brand" href="index.html" aria-label="葉鹿下町自治会 ホーム">
+          <span class="brand-mark" aria-hidden="true">葉</span>
+          <span>
+            <strong>葉鹿下町自治会</strong>
+            <small>栃木県足利市</small>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="icon-lines" aria-hidden="true"></span>
+          <span>メニュー</span>
+        </button>
+        <ul id="site-menu" class="site-menu">
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="circular.html">回覧板</a></li>
+          <li><a href="disaster.html">防災</a></li>
+          <li><a href="schedule.html">予定</a></li>
+          <li><a href="garbage.html">ごみ収集</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <a class="back-link" href="index.html">ホームへ戻る</a>
+        <p class="eyebrow">Schedule</p>
+        <h1><span>行事予定</span></h1>
+        <p class="lead">清掃、会議、防災点検、地域行事の日程を、月ごとに確認できます。</p>
+      </section>
+
+      <section class="content-band page-content">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">2026年6月</p>
+            <h2>今月の予定</h2>
+          </div>
+        </div>
+        <div class="event-timeline">
+          <article class="timeline-item">
+            <time datetime="2026-06-01"><span>6/1</span>月</time>
+            <div>
+              <h3>防災倉庫点検</h3>
+              <p>9:00 集会所前。備蓄品、発電機、照明を確認します。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <time datetime="2026-06-14"><span>6/14</span>日</time>
+            <div>
+              <h3>クリーンデー</h3>
+              <p>8:30 地域の公園集合。雨天の場合は翌週へ延期します。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <time datetime="2026-06-21"><span>6/21</span>日</time>
+            <div>
+              <h3>子ども見守り会議</h3>
+              <p>10:00 集会所。通学路、危険箇所、声かけ担当を確認します。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <time datetime="2026-06-28"><span>6/28</span>日</time>
+            <div>
+              <h3>役員会</h3>
+              <p>19:00 集会所。7月の回覧内容と祇園祭準備を確認します。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band muted">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Annual</p>
+            <h2>年間の主な予定</h2>
+          </div>
+        </div>
+        <div class="simple-table" role="table" aria-label="年間予定">
+          <div role="row">
+            <strong role="cell">4月</strong>
+            <span role="cell">自治会総会、新班長説明</span>
+          </div>
+          <div role="row">
+            <strong role="cell">6月</strong>
+            <span role="cell">防災点検、クリーンデー</span>
+          </div>
+          <div role="row">
+            <strong role="cell">7月</strong>
+            <span role="cell">祇園祭準備、夏の防犯活動</span>
+          </div>
+          <div role="row">
+            <strong role="cell">12月</strong>
+            <span role="cell">年末防犯パトロール</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band page-content">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Documents</p>
+            <h2>関連資料</h2>
+          </div>
+        </div>
+        <div class="list-panel">
+          <a href="documents/jichikai-dayori-2026-06.pdf" class="list-row">
+            <span class="doc-icon">PDF</span>
+            <span>
+              <strong>自治会だより 6月号</strong>
+              <small>今月の予定 / 防災メモ / 役員会より</small>
+            </span>
+            <time datetime="2026-06-01">6/1</time>
+          </a>
+          <a href="documents/gionmatsuri-junbi-2026.pdf" class="list-row">
+            <span class="doc-icon">PDF</span>
+            <span>
+              <strong>祇園祭準備のお知らせ</strong>
+              <small>準備日程 / 係分担 / 掲載写真の確認</small>
+            </span>
+            <time datetime="2026-05-31">5/31</time>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>葉鹿下町自治会 住民ポータル 試作品</p>
+      <p>お問い合わせ：自治会館 毎週土曜 10:00-12:00</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

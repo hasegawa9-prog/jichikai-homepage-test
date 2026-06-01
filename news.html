@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>お知らせ | 葉鹿下町自治会</title>
+    <meta
+      name="description"
+      content="葉鹿下町自治会のお知らせ、行事、防災、生活情報を掲載するページ。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="メインメニュー">
+        <a class="brand" href="index.html" aria-label="葉鹿下町自治会 ホーム">
+          <span class="brand-mark" aria-hidden="true">葉</span>
+          <span>
+            <strong>葉鹿下町自治会</strong>
+            <small>栃木県足利市</small>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="icon-lines" aria-hidden="true"></span>
+          <span>メニュー</span>
+        </button>
+        <ul id="site-menu" class="site-menu">
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="circular.html">回覧板</a></li>
+          <li><a href="disaster.html">防災</a></li>
+          <li><a href="schedule.html">予定</a></li>
+          <li><a href="garbage.html">ごみ収集</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <a class="back-link" href="index.html">ホームへ戻る</a>
+        <p class="eyebrow">News</p>
+        <h1><span>お知らせ</span></h1>
+        <p class="lead">自治会からのお知らせ、行事の変更、防災や生活に関する連絡をまとめます。</p>
+      </section>
+
+      <section class="content-band page-content">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Latest</p>
+            <h2>最新のお知らせ</h2>
+          </div>
+          <div class="filter-tabs" role="tablist" aria-label="お知らせカテゴリ">
+            <button class="filter-tab is-active" type="button" data-filter="all">すべて</button>
+            <button class="filter-tab" type="button" data-filter="urgent">重要</button>
+            <button class="filter-tab" type="button" data-filter="event">行事</button>
+            <button class="filter-tab" type="button" data-filter="life">生活</button>
+          </div>
+        </div>
+
+        <div class="notice-list" aria-live="polite">
+          <article class="notice-item news-card" data-category="urgent">
+            <div>
+              <time datetime="2026-05-24">2026年5月24日</time>
+              <span class="tag urgent">重要</span>
+            </div>
+            <h3>大雨・台風に備えた安否確認について</h3>
+            <p>災害時は白いタオルを無事の目印にします。集合場所、避難所、家庭の備えは防災ページで確認できます。</p>
+          </article>
+          <article class="notice-item news-card" data-category="event">
+            <div>
+              <time datetime="2026-05-31">2026年5月31日</time>
+              <span class="tag event">行事</span>
+            </div>
+            <h3>祇園祭準備のお知らせを掲載しました</h3>
+            <p>準備打ち合わせ、備品確認、係分担の仮資料をWEB回覧板に掲載しました。本番では確定内容に差し替えます。</p>
+          </article>
+          <article class="notice-item news-card" data-category="life">
+            <div>
+              <time datetime="2026-06-01">2026年6月1日</time>
+              <span class="tag life">生活</span>
+            </div>
+            <h3>自治会だより6月号を掲載しました</h3>
+            <p>今月の予定、防災メモ、役員会からのお知らせをPDFで確認できます。</p>
+          </article>
+          <article class="notice-item news-card" data-category="event">
+            <div>
+              <time datetime="2026-05-25">2026年5月25日</time>
+              <span class="tag event">行事</span>
+            </div>
+            <h3>防犯パトロール当番表を掲載しました</h3>
+            <p>6月から8月までの当番予定をWEB回覧板に掲載しました。巡回は無理をせず、複数人で行います。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>葉鹿下町自治会 住民ポータル 試作品</p>
+      <p>お問い合わせ：自治会館 毎週土曜 10:00-12:00</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

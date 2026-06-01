@@ -1,0 +1,79 @@
+<svg width="1600" height="920" viewBox="0 0 1600 920" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">住宅地と公園のある自治会エリア</title>
+  <desc id="desc">住宅、集会所、公園、避難所、掲示板が歩いて回れる範囲にまとまった地域のイメージ。</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9EEF2"/>
+      <stop offset="0.56" stop-color="#F4F6E9"/>
+      <stop offset="1" stop-color="#E5EDDC"/>
+    </linearGradient>
+    <linearGradient id="road" x1="279" y1="841" x2="1162" y2="324" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9D4C8"/>
+      <stop offset="1" stop-color="#BFC8C3"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#24433E" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="920" fill="url(#sky)"/>
+  <circle cx="1328" cy="136" r="62" fill="#F6C765"/>
+  <path d="M0 604C152 559 286 561 408 602C522 641 662 643 789 592C931 536 1091 510 1254 565C1394 612 1499 625 1600 594V920H0V604Z" fill="#9FB77B"/>
+  <path d="M0 682C169 634 338 646 492 694C627 735 779 747 956 684C1112 630 1314 627 1600 705V920H0V682Z" fill="#789C72"/>
+  <path d="M705 920C764 820 794 734 790 656C785 561 726 509 647 465C580 428 526 380 524 307C523 242 578 197 654 172" stroke="url(#road)" stroke-width="112" stroke-linecap="round"/>
+  <path d="M705 920C764 820 794 734 790 656C785 561 726 509 647 465C580 428 526 380 524 307C523 242 578 197 654 172" stroke="#F7F4E7" stroke-width="18" stroke-linecap="round" stroke-dasharray="54 42" opacity="0.75"/>
+  <path d="M0 778C122 774 229 790 318 826C410 862 540 865 682 822C879 763 997 760 1144 812C1284 861 1445 873 1600 834V920H0V778Z" fill="#5B846B"/>
+  <g filter="url(#soft)">
+    <path d="M964 248H1244V466H964V248Z" fill="#F8F4E7"/>
+    <path d="M941 264L1101 144L1268 264H941Z" fill="#C9604C"/>
+    <rect x="1002" y="313" width="68" height="153" rx="8" fill="#386D79"/>
+    <rect x="1112" y="310" width="86" height="74" rx="8" fill="#E9C16A"/>
+    <rect x="1112" y="402" width="86" height="64" rx="8" fill="#86B4B0"/>
+    <rect x="990" y="481" width="226" height="26" rx="13" fill="#325C52"/>
+    <text x="1056" y="448" fill="#F8F4E7" font-family="sans-serif" font-size="34" font-weight="700">集</text>
+  </g>
+  <g filter="url(#soft)">
+    <path d="M312 294H505V454H312V294Z" fill="#F7F0DC"/>
+    <path d="M292 310L407 212L526 310H292Z" fill="#5A8EA0"/>
+    <rect x="341" y="346" width="50" height="108" rx="8" fill="#6B8A67"/>
+    <rect x="420" y="346" width="56" height="52" rx="8" fill="#EFCB72"/>
+    <rect x="420" y="414" width="56" height="40" rx="8" fill="#C5DDD5"/>
+  </g>
+  <g filter="url(#soft)">
+    <path d="M1172 571H1372V710H1172V571Z" fill="#F6EAD2"/>
+    <path d="M1154 584L1272 499L1390 584H1154Z" fill="#CC7B52"/>
+    <rect x="1204" y="622" width="54" height="88" rx="8" fill="#516F87"/>
+    <rect x="1285" y="622" width="52" height="44" rx="8" fill="#E8BB5E"/>
+  </g>
+  <g>
+    <rect x="180" y="579" width="268" height="122" rx="20" fill="#FAF8EF" filter="url(#soft)"/>
+    <rect x="206" y="605" width="74" height="70" rx="8" fill="#5F8D8A"/>
+    <rect x="300" y="605" width="122" height="16" rx="8" fill="#CB735F"/>
+    <rect x="300" y="641" width="96" height="14" rx="7" fill="#89A36B"/>
+    <rect x="300" y="670" width="72" height="14" rx="7" fill="#D8AD57"/>
+    <text x="226" y="651" fill="#FAF8EF" font-family="sans-serif" font-size="32" font-weight="700">掲</text>
+  </g>
+  <g>
+    <ellipse cx="925" cy="606" rx="176" ry="92" fill="#A3BF7E"/>
+    <path d="M806 621C874 590 953 587 1044 620" stroke="#F4F0D8" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="855" cy="571" r="34" fill="#507D5B"/>
+    <circle cx="988" cy="558" r="42" fill="#4D7655"/>
+    <circle cx="1042" cy="604" r="30" fill="#638E5F"/>
+    <rect x="837" y="601" width="36" height="70" rx="18" fill="#8B6E50"/>
+    <rect x="970" y="597" width="40" height="82" rx="20" fill="#806548"/>
+  </g>
+  <g>
+    <rect x="598" y="616" width="118" height="84" rx="14" fill="#F7F5EA" filter="url(#soft)"/>
+    <path d="M629 661L655 635L690 684H614L629 661Z" fill="#386D79"/>
+    <circle cx="657" cy="651" r="9" fill="#F7F5EA"/>
+  </g>
+  <g fill="#385B52">
+    <circle cx="252" cy="522" r="18"/>
+    <circle cx="282" cy="522" r="18"/>
+    <rect x="248" y="540" width="38" height="64" rx="19"/>
+    <circle cx="1340" cy="447" r="18"/>
+    <circle cx="1372" cy="447" r="18"/>
+    <rect x="1336" y="465" width="40" height="66" rx="20"/>
+    <circle cx="744" cy="366" r="17"/>
+    <rect x="727" y="383" width="34" height="58" rx="17"/>
+  </g>
+</svg>

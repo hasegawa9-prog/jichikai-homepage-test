@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WEB回覧板 | 葉鹿下町自治会</title>
+    <meta
+      name="description"
+      content="葉鹿下町自治会の回覧物を月別に確認できるWEB回覧板ページ。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="メインメニュー">
+        <a class="brand" href="index.html" aria-label="葉鹿下町自治会 ホーム">
+          <span class="brand-mark" aria-hidden="true">葉</span>
+          <span>
+            <strong>葉鹿下町自治会</strong>
+            <small>栃木県足利市</small>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="icon-lines" aria-hidden="true"></span>
+          <span>メニュー</span>
+        </button>
+        <ul id="site-menu" class="site-menu">
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="circular.html">回覧板</a></li>
+          <li><a href="disaster.html">防災</a></li>
+          <li><a href="schedule.html">予定</a></li>
+          <li><a href="garbage.html">ごみ収集</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <a class="back-link" href="index.html">ホームへ戻る</a>
+        <p class="eyebrow">Circular</p>
+        <h1><span>WEB回覧板</span></h1>
+        <p class="lead">紙の回覧板と同じ内容を、あとから見返せるように月別で整理します。</p>
+      </section>
+
+      <section class="content-band page-content">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">2026年6月</p>
+            <h2>今月の回覧</h2>
+          </div>
+        </div>
+
+        <div class="circular-layout">
+          <div class="month-nav" aria-label="月別メニュー">
+            <a class="is-active" href="#june">2026年6月</a>
+            <a href="#may">2026年5月</a>
+            <a href="#archive">過去の回覧</a>
+          </div>
+
+          <div class="list-panel circular-list" id="june" aria-label="2026年6月の回覧物">
+            <a href="documents/jichikai-dayori-2026-06.pdf" class="list-row">
+              <span class="doc-icon">PDF</span>
+              <span>
+                <strong>自治会だより 6月号</strong>
+                <small>行事予定 / 防災メモ / 会計報告</small>
+              </span>
+              <time datetime="2026-06-01">6/1</time>
+            </a>
+            <a href="documents/soukai-gijiroku-yakuin-2026.pdf" class="list-row">
+              <span class="doc-icon">PDF</span>
+              <span>
+                <strong>総会議事録と新役員一覧</strong>
+                <small>議決結果 / 役員担当 / 年間方針</small>
+              </span>
+              <time datetime="2026-05-20">5/20</time>
+            </a>
+            <a href="documents/bouhan-patrol-2026-06-08.pdf" class="list-row">
+              <span class="doc-icon">PDF</span>
+              <span>
+                <strong>防犯パトロール当番表</strong>
+                <small>6月から8月の巡回予定</small>
+              </span>
+              <time datetime="2026-05-25">5/25</time>
+            </a>
+            <a href="documents/gionmatsuri-junbi-2026.pdf" class="list-row">
+              <span class="doc-icon">PDF</span>
+              <span>
+                <strong>祇園祭準備のお知らせ</strong>
+                <small>準備日 / 係分担 / 当日の集合場所</small>
+              </span>
+              <time datetime="2026-05-31">5/31</time>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>葉鹿下町自治会 住民ポータル 試作品</p>
+      <p>お問い合わせ：自治会館 毎週土曜 10:00-12:00</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

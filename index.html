@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>葉鹿下町自治会 DXホーム</title>
+    <meta
+      name="description"
+      content="栃木県足利市の葉鹿下町自治会向けに、回覧板、防災情報、ごみ収集、行事予定をまとめたホームページ試作品。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="メインメニュー">
+        <a class="brand" href="index.html" aria-label="葉鹿下町自治会 ホーム">
+          <span class="brand-mark" aria-hidden="true">葉</span>
+          <span>
+            <strong>葉鹿下町自治会</strong>
+            <small>栃木県足利市</small>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="icon-lines" aria-hidden="true"></span>
+          <span>メニュー</span>
+        </button>
+        <ul id="site-menu" class="site-menu">
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="circular.html">回覧板</a></li>
+          <li><a href="disaster.html">防災</a></li>
+          <li><a href="schedule.html">予定</a></li>
+          <li><a href="garbage.html">ごみ収集</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">栃木県足利市 / 回覧・防災・生活情報をひとつに</p>
+          <h1><span>葉鹿下町</span><span>自治会</span></h1>
+          <p class="lead">
+            紙の回覧板を残しながら、葉鹿下町の住民がスマホでも最新情報を確認できる自治会ホームページの試作品です。
+          </p>
+          <form class="search-panel" role="search">
+            <label for="site-search">自治会内を検索</label>
+            <div>
+              <input id="site-search" type="search" placeholder="例：ごみ、防災訓練、班長" />
+              <button type="submit" aria-label="検索">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M10.8 18.1a7.3 7.3 0 1 1 5.2-2.1l4 4-1.6 1.6-4-4a7.2 7.2 0 0 1-3.6.9Zm0-2.2a5.1 5.1 0 1 0 0-10.2 5.1 5.1 0 0 0 0 10.2Z" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+        <figure class="hero-visual">
+          <img src="assets/community-hero.svg" alt="住宅地、公園、集会所、掲示板のある地域イメージ" />
+          <figcaption>集会所・掲示板・避難所・公園を中心に、地域の情報を整理</figcaption>
+        </figure>
+      </section>
+
+      <section class="quick-actions" aria-label="よく使う項目">
+        <a class="quick-action" href="circular.html">
+          <span class="action-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Zm8 1.7V7h2.3L14 4.7ZM8 10h8V8H8v2Zm0 4h8v-2H8v2Zm0 4h5v-2H8v2Z" /></svg>
+          </span>
+          <span>WEB回覧板</span>
+        </a>
+        <a class="quick-action" href="disaster.html">
+          <span class="action-icon alert" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2 2.8 20h18.4L12 2Zm0 5 5.6 11H6.4L12 7Zm-1 3h2v4h-2v-4Zm0 5h2v2h-2v-2Z" /></svg>
+          </span>
+          <span>防災・避難</span>
+        </a>
+        <a class="quick-action" href="garbage.html">
+          <span class="action-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 4h8l1 3h4v2h-2l-1.1 11H6.1L5 9H3V7h4l1-3Zm2 2-.4 1h4.8L14 6h-4Zm-2.8 3 .9 9h7.8l.9-9H7.2Zm2.8 2h2v5h-2v-5Zm4 0h2v5h-2v-5Z" /></svg>
+          </span>
+          <span>ごみ収集</span>
+        </a>
+        <a class="quick-action" href="schedule.html">
+          <span class="action-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 2h2v3h6V2h2v3h3v17H4V5h3V2Zm11 8H6v10h12V10ZM6 8h12V7H6v1Zm2 5h3v3H8v-3Zm5 0h3v3h-3v-3Z" /></svg>
+          </span>
+          <span>行事予定</span>
+        </a>
+      </section>
+
+      <section id="news" class="content-band">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">News</p>
+            <h2>お知らせ</h2>
+          </div>
+          <div class="filter-tabs" role="tablist" aria-label="お知らせカテゴリ">
+            <button class="filter-tab is-active" type="button" data-filter="all">すべて</button>
+            <button class="filter-tab" type="button" data-filter="urgent">重要</button>
+            <button class="filter-tab" type="button" data-filter="event">行事</button>
+            <button class="filter-tab" type="button" data-filter="life">生活</button>
+          </div>
+        </div>
+        <div class="news-grid" aria-live="polite">
+          <article class="news-card" data-category="urgent">
+            <time datetime="2026-05-24">5月24日</time>
+            <span class="tag urgent">重要</span>
+            <h3>大雨・台風に備えた安否確認について</h3>
+            <p>災害時は白いタオルを無事の目印にします。避難所と集合場所は防災ページで確認できます。</p>
+          </article>
+          <article class="news-card" data-category="event">
+            <time datetime="2026-05-31">5月31日</time>
+            <span class="tag event">行事</span>
+            <h3>祇園祭準備のお知らせを掲載</h3>
+            <p>準備打ち合わせ、備品確認、係分担の仮資料をWEB回覧板に掲載しました。</p>
+          </article>
+          <article class="news-card" data-category="life">
+            <time datetime="2026-06-01">6月1日</time>
+            <span class="tag life">生活</span>
+            <h3>自治会だより6月号を掲載</h3>
+            <p>今月の予定、防災メモ、役員会からのお知らせをPDFで確認できます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="circular" class="split-layout">
+        <div class="section-copy">
+          <p class="eyebrow">Circular</p>
+          <h2>WEB回覧板</h2>
+          <p>
+            月ごとの回覧物をまとめ、紙の回覧が届く前でも確認できるようにします。重要な配布物はLINE通知にも連携する想定です。
+          </p>
+        </div>
+        <div class="list-panel" aria-label="最新の回覧物">
+          <a href="documents/jichikai-dayori-2026-06.pdf" class="list-row">
+            <span class="doc-icon">PDF</span>
+            <span>
+              <strong>自治会だより 6月号</strong>
+              <small>行事予定 / 防災メモ / 会計報告</small>
+            </span>
+            <time datetime="2026-06-01">6/1</time>
+          </a>
+          <a href="documents/soukai-gijiroku-yakuin-2026.pdf" class="list-row">
+            <span class="doc-icon">PDF</span>
+            <span>
+              <strong>総会議事録と新役員一覧</strong>
+              <small>議決結果 / 役員担当 / 年間方針</small>
+            </span>
+            <time datetime="2026-05-20">5/20</time>
+          </a>
+          <a href="documents/bouhan-patrol-2026-06-08.pdf" class="list-row">
+            <span class="doc-icon">PDF</span>
+            <span>
+              <strong>防犯パトロール当番表</strong>
+              <small>6月から8月の巡回予定</small>
+            </span>
+            <time datetime="2026-05-25">5/25</time>
+          </a>
+        </div>
+      </section>
+
+      <section id="disaster" class="disaster-band">
+        <div>
+          <p class="eyebrow">Safety</p>
+          <h2>防災・防犯</h2>
+          <p>災害時に見返すページは、普段から同じ場所に置く。平時は訓練、備蓄、防犯情報を掲載します。</p>
+        </div>
+        <dl class="safety-stats">
+          <div>
+            <dt>一時集合場所</dt>
+            <dd>地域の公園</dd>
+          </div>
+          <div>
+            <dt>指定避難所</dt>
+            <dd>第一小学校</dd>
+          </div>
+          <div>
+            <dt>安否確認</dt>
+            <dd>白いタオル掲出</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="calendar" class="content-band muted">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Schedule</p>
+            <h2>今月の予定</h2>
+          </div>
+        </div>
+        <div class="schedule-grid">
+          <article class="schedule-item">
+            <time datetime="2026-06-01"><span>6/1</span>月</time>
+            <h3>防災倉庫点検</h3>
+            <p>9:00 集会所前</p>
+          </article>
+          <article class="schedule-item">
+            <time datetime="2026-06-14"><span>6/14</span>日</time>
+            <h3>クリーンデー</h3>
+            <p>8:30 地域の公園</p>
+          </article>
+          <article class="schedule-item">
+            <time datetime="2026-06-21"><span>6/21</span>日</time>
+            <h3>子ども見守り会議</h3>
+            <p>10:00 集会所</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="life" class="life-section">
+        <div class="life-card">
+          <h2>生活情報</h2>
+          <ul>
+            <li><strong>可燃ごみ</strong><span>火・金 8:00まで</span></li>
+            <li><strong>資源ごみ</strong><span>第1・第3水曜</span></li>
+            <li><strong>粗大ごみ</strong><span>市の受付番号を掲載</span></li>
+          </ul>
+        </div>
+        <div id="join" class="line-card">
+          <h2>LINE通知</h2>
+          <div class="qr-placeholder" aria-label="LINE公式アカウントのQRコード見本"></div>
+          <p>回覧板、防災、急な日程変更をスマホへ通知する導線を置きます。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>葉鹿下町自治会 住民ポータル 試作品</p>
+      <p>お問い合わせ：自治会館 毎週土曜 10:00-12:00</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
