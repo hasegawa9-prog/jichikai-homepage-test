@@ -95,14 +95,44 @@ input {
 }
 
 .brand-mark {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 2.65rem;
-  height: 2.65rem;
-  border-radius: 8px;
+  flex: 0 0 auto;
+  width: 2.8rem;
+  height: 2.8rem;
+  overflow: hidden;
+  border: 1px solid rgba(116, 29, 24, 0.18);
+  border-radius: 13px;
   color: white;
-  background: var(--green);
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.32), transparent 28%),
+    linear-gradient(135deg, #c83a31 0%, #9f261f 58%, #741d18 100%);
+  box-shadow: 0 10px 22px rgba(116, 29, 24, 0.2);
+  font-size: 0;
   font-weight: 800;
+}
+
+.brand-mark::before {
+  position: absolute;
+  width: 1.35rem;
+  height: 1.55rem;
+  border-radius: 1.3rem 0.2rem 1.3rem 0.2rem;
+  background: #fff8f6;
+  box-shadow: inset -0.28rem -0.22rem 0 rgba(255, 216, 207, 0.9);
+  content: "";
+  transform: translate(0.05rem, -0.1rem) rotate(-34deg);
+}
+
+.brand-mark::after {
+  position: absolute;
+  width: 1.25rem;
+  height: 0.16rem;
+  border-radius: 999px;
+  background: rgba(255, 248, 246, 0.92);
+  content: "";
+  transform: translate(-0.03rem, 0.62rem) rotate(-48deg);
+  transform-origin: right center;
 }
 
 .brand strong,
@@ -168,14 +198,52 @@ input {
 }
 
 .hero-section {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(22rem, 1fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
+  place-items: center;
+  max-width: 1180px;
+  min-height: calc(100vh - 9rem);
+  margin: 0 auto;
+  padding: clamp(4.5rem, 9vw, 7rem) 1.2rem 3rem;
+}
+
+.notice-strip {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.75rem 1rem;
   align-items: center;
   max-width: 1180px;
-  min-height: calc(100vh - 8.2rem);
+  margin: 1rem auto 0;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid #e0afa8;
+  border-radius: 8px;
+  background: #fff1ed;
+  color: #4a1714;
+}
+
+.notice-strip strong {
+  color: #8b211b;
+}
+
+.notice-strip span {
+  color: #62423e;
+}
+
+.notice-strip a,
+.text-link {
+  color: var(--green);
+  font-weight: 900;
+  text-underline-offset: 0.2em;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  max-width: 58rem;
   margin: 0 auto;
-  padding: clamp(2.25rem, 6vw, 5rem) 1.2rem 2rem;
+  text-align: center;
 }
 
 .page-hero {
@@ -226,7 +294,7 @@ p {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  font-size: clamp(3.4rem, 9vw, 7.3rem);
   line-height: 1.03;
   letter-spacing: 0;
 }
@@ -250,10 +318,17 @@ h3 {
 }
 
 .lead {
-  max-width: 42rem;
+  max-width: 45rem;
   margin: 1rem 0 1.5rem;
   color: #594441;
-  font-size: 1.08rem;
+  font-size: 1.14rem;
+}
+
+.last-updated {
+  margin: -0.5rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 .search-panel {
@@ -296,6 +371,14 @@ h3 {
   cursor: pointer;
 }
 
+.search-message {
+  min-height: 1.4rem;
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .search-panel svg,
 .quick-action svg {
   width: 1.35rem;
@@ -304,21 +387,28 @@ h3 {
 }
 
 .hero-visual {
+  position: absolute;
+  top: clamp(1.2rem, 4vw, 2.8rem);
+  right: 1.2rem;
+  width: min(22vw, 13rem);
   margin: 0;
+  opacity: 0.92;
 }
 
 .hero-visual img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 30px rgba(95, 31, 26, 0.14);
 }
 
 .hero-visual figcaption {
-  margin-top: 0.7rem;
+  margin-top: 0.45rem;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .hero-visual figcaption span {
@@ -550,6 +640,31 @@ h3 {
   gap: 1rem;
 }
 
+.emergency-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e0afa8;
+  border-radius: 8px;
+  background: #fff1ed;
+}
+
+.emergency-panel p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.emergency-panel ol {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.4rem;
+  font-weight: 900;
+}
+
 .info-card {
   display: grid;
   gap: 0.75rem;
@@ -672,8 +787,16 @@ h3 {
 }
 
 .page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
   max-width: 1180px;
   margin: 1rem auto 0;
+}
+
+.page-actions.compact {
+  margin-top: 1.2rem;
 }
 
 .download-link {
@@ -747,6 +870,11 @@ h3 {
   font-weight: 800;
 }
 
+.external-row {
+  border-color: #d8a29a;
+  background: #fff8f6;
+}
+
 .doc-icon {
   display: grid;
   place-items: center;
@@ -756,6 +884,16 @@ h3 {
   color: white;
   background: var(--blue);
   font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.doc-icon.external {
+  background: var(--green);
+}
+
+.external-mark {
+  color: var(--green);
+  font-size: 1.4rem;
   font-weight: 900;
 }
 
@@ -825,7 +963,7 @@ h3 {
 
 .life-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.55fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
 }
 
@@ -920,6 +1058,12 @@ h3 {
 
   .hero-section {
     min-height: auto;
+    padding-top: 3rem;
+  }
+
+  .notice-strip,
+  .emergency-panel {
+    grid-template-columns: 1fr;
   }
 
   .quick-actions,
@@ -933,6 +1077,12 @@ h3 {
 
   .section-copy {
     position: static;
+  }
+
+  .hero-visual {
+    position: static;
+    width: min(18rem, 72vw);
+    margin-top: 1.5rem;
   }
 
   .circular-layout {
@@ -959,6 +1109,7 @@ h3 {
 
   .hero-section,
   .page-hero,
+  .notice-strip,
   .quick-actions,
   .content-band,
   .split-layout,
@@ -974,8 +1125,14 @@ h3 {
     min-width: 0;
   }
 
+  .hero-copy {
+    justify-items: center;
+    text-align: center;
+  }
+
   h1 {
-    font-size: clamp(2.1rem, 10vw, 2.8rem);
+    font-size: clamp(2.4rem, 12vw, 3.4rem);
+    text-align: center;
   }
 
   h1 span {
@@ -983,9 +1140,10 @@ h3 {
   }
 
   .lead {
-    max-width: 21.5rem;
+    max-width: 23rem;
     font-size: 1rem;
     word-break: break-all;
+    text-align: center;
   }
 
   .hero-visual figcaption {

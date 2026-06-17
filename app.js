@@ -4,6 +4,13 @@ const filterTabs = document.querySelectorAll(".filter-tab");
 const newsCards = document.querySelectorAll(".news-card");
 const searchForm = document.querySelector(".search-panel");
 const searchInput = document.querySelector("#site-search");
+const searchMessage = document.createElement("p");
+
+if (searchForm) {
+  searchMessage.className = "search-message";
+  searchMessage.setAttribute("aria-live", "polite");
+  searchForm.append(searchMessage);
+}
 
 menuButton?.addEventListener("click", () => {
   const expanded = menuButton.getAttribute("aria-expanded") === "true";
@@ -26,6 +33,7 @@ searchForm?.addEventListener("submit", (event) => {
   const query = searchInput.value.trim();
   if (!query) return;
 
+  searchMessage.textContent = "";
   const sections = Array.from(document.querySelectorAll("section"));
   const target = sections.find((section) => section.textContent.includes(query));
   if (target) {
@@ -38,5 +46,8 @@ searchForm?.addEventListener("submit", (event) => {
       ],
       { duration: 1200, easing: "ease-out" },
     );
+    searchMessage.textContent = `「${query}」に近い内容へ移動しました。`;
+  } else {
+    searchMessage.textContent = `「${query}」は見つかりませんでした。回覧板やお知らせも確認してください。`;
   }
 });
