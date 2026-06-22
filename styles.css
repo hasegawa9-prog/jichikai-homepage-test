@@ -824,6 +824,10 @@ h3 {
   font-size: 0.72rem;
 }
 
+.download-link.external-link::before {
+  content: "外部";
+}
+
 .split-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.68fr) minmax(0, 1fr);
