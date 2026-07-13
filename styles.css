@@ -1041,6 +1041,17 @@ h3 {
   text-align: right;
 }
 
+.life-card .text-link {
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.life-card .life-note {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 .qr-placeholder {
   width: 8.5rem;
   height: 8.5rem;
