@@ -667,7 +667,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 :root{color-scheme:light dark;--bg:light-dark(#fff,#181818);--fg:light-dark(#1a1c1f,#fff);--border:light-dark(#cbd4dd,#555);--flood:#1677d2;--closed:#e06a16;--road:#278c4b;--landslide:#b34276;--bank:#7252c7}
 *{box-sizing:border-box}body{margin:0;padding:14px;background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1180px;margin:auto}h1{font-size:1.35rem;font-weight:500;margin:0 0 6px}.note{margin:0 0 8px}.legend{display:flex;flex-wrap:wrap;gap:7px 16px;margin:7px 0}.legend span{display:flex;align-items:center;gap:5px}.dot{width:11px;height:11px;border-radius:50%;display:inline-block}.flood{background:var(--flood)}.closed{background:var(--closed)}.road{background:var(--road)}.landslide{background:var(--landslide)}.bank{background:var(--bank)}
 #map{height:620px;min-height:420px;width:100%;background:#dfe7ef;border:1px solid var(--border);z-index:0}.map-error{display:none;margin:8px 0;color:#b42318}.source{margin:5px 0;font-size:12px}.table-wrap{overflow-x:auto;margin-top:12px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:500}td:first-child{white-space:nowrap}a{color:#1677d2}.leaflet-popup-content{font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.leaflet-popup-content strong{font-weight:600}.leaflet-control-attribution{font-size:11px}
-@media(max-width:600px){body{padding:7px}#map{height:510px;min-height:380px}th,td{padding:6px 5px;font-size:12px}}
+@media(max-width:600px){body{padding:7px}#map{height:min(56vh,440px);min-height:320px;touch-action:pan-y!important}th,td{padding:6px 5px;font-size:12px}}
 </style></head><body><main>
 <h1>足利市 水害情報マップ（2026年7月17日以降）</h1>
 <p class="note">国土地理院の標準地図に、公開投稿・公式情報の地点を重ねています。丸印を選ぶと詳細と参照元を表示します。</p>
@@ -688,7 +688,8 @@ const incidents=[{"id":1,"time":"2026-07-18 11:37","source":"X（いまとち）
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const category=d=>d.damage.includes("護岸")?"bank":d.damage.includes("陥没")||d.damage.includes("損壊")?"road":d.damage.includes("土砂")?"landslide":d.damage.includes("通行止め")&&!d.damage.includes("冠水")?"closed":"flood";
 const colors={flood:"#1677d2",closed:"#e06a16",road:"#278c4b",landslide:"#b34276",bank:"#7252c7"};
-const map=L.map("map",{zoomControl:true}).setView([36.36,139.445],12);
+const isMobile=window.matchMedia("(max-width: 600px)").matches;
+const map=L.map("map",{zoomControl:true,dragging:!isMobile,touchZoom:!isMobile,scrollWheelZoom:!isMobile,doubleClickZoom:!isMobile,boxZoom:!isMobile,keyboard:!isMobile,tap:!isMobile}).setView([36.36,139.445],12);
 let tileErrors=0;
 const tiles=L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",{minZoom:5,maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener">国土地理院</a>'});
 tiles.on("tileerror",()=>{tileErrors++;if(tileErrors>3)document.getElementById("map-error").style.display="block"});
@@ -703,4 +704,3 @@ incidents.forEach(d=>{
 map.fitBounds(bounds,{padding:[28,28],maxZoom:13});
 document.getElementById("rows").innerHTML=incidents.slice().sort((a,b)=>a.time.localeCompare(b.time)).map(d=>'<tr><td>'+escapeHtml(d.time.slice(5))+'</td><td><a href="'+escapeHtml(d.url)+'" target="_blank" rel="noopener">'+escapeHtml(d.place)+'</a></td><td>'+escapeHtml(d.damage)+'</td><td>'+escapeHtml(d.confidence)+'</td><td>'+escapeHtml(d.source)+'</td></tr>').join("");
 </script></body></html>
-
