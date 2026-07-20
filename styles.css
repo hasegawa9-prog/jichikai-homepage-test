@@ -273,6 +273,13 @@ input {
   white-space: nowrap;
 }
 
+.flood-map-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
 .flood-map-link:hover,
 .flood-map-link:focus-visible {
   background: #8b211b;
@@ -1161,6 +1168,10 @@ h3 {
   .flood-map-banner,
   .emergency-panel {
     grid-template-columns: 1fr;
+  }
+
+  .flood-map-links {
+    justify-content: flex-start;
   }
 
   .quick-actions,
