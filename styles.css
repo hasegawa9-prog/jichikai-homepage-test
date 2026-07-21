@@ -259,20 +259,6 @@ input {
   color: #62423e;
 }
 
-.flood-summary {
-  display: grid;
-  gap: 0.35rem;
-  margin: 0.8rem 0 0;
-  padding-left: 1.25rem;
-  color: #4f302d;
-}
-
-.flood-summary a {
-  color: #8b211b;
-  font-weight: 900;
-  text-underline-offset: 0.2em;
-}
-
 .flood-map-link {
   display: inline-flex;
   align-items: center;
