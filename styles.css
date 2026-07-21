@@ -246,6 +246,38 @@ input {
   text-align: center;
 }
 
+.emergency-map-link {
+  display: grid;
+  gap: 0.35rem;
+  width: min(100%, 46rem);
+  margin: 0 0 1.2rem;
+  border: 2px solid #a8221c;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  background: #a8221c;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 16px 36px rgba(95, 31, 26, 0.2);
+}
+
+.emergency-map-link strong {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.25;
+}
+
+.emergency-map-link span {
+  color: #fff4f1;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.emergency-map-link:hover,
+.emergency-map-link:focus-visible {
+  background: #8f1d18;
+  outline: 3px solid rgba(168, 34, 28, 0.24);
+  outline-offset: 3px;
+}
+
 .page-hero {
   max-width: 1180px;
   margin: 0 auto;
