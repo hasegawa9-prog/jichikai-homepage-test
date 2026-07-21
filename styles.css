@@ -390,17 +390,24 @@ h3 {
   position: absolute;
   top: clamp(1.2rem, 4vw, 2.8rem);
   right: 1.2rem;
-  width: min(28vw, 18rem);
+  width: min(44vw, 34rem);
   margin: 0;
-  opacity: 0.92;
+  opacity: 0.96;
 }
 
-.hero-visual img {
+.hero-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.hero-media-grid img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(95, 31, 26, 0.14);
+  background: white;
 }
 
 .hero-visual figcaption {
@@ -1135,7 +1142,7 @@ h3 {
 
   .hero-visual {
     position: static;
-    width: min(18rem, 72vw);
+    width: min(34rem, 100%);
     margin-top: 1.5rem;
   }
 
