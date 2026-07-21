@@ -666,18 +666,17 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <style>
 :root{color-scheme:light dark;--bg:light-dark(#fff,#181818);--fg:light-dark(#1a1c1f,#fff);--border:light-dark(#cbd4dd,#555);--flood:#1677d2;--closed:#e06a16;--road:#278c4b;--landslide:#b34276;--bank:#7252c7}
 *{box-sizing:border-box}body{margin:0;padding:14px;background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1180px;margin:auto}h1{font-size:1.35rem;font-weight:500;margin:0 0 6px}.note{margin:0 0 8px}.legend{display:flex;flex-wrap:wrap;gap:7px 16px;margin:7px 0}.legend span{display:flex;align-items:center;gap:5px}.dot{width:11px;height:11px;border-radius:50%;display:inline-block}.flood{background:var(--flood)}.closed{background:var(--closed)}.road{background:var(--road)}.landslide{background:var(--landslide)}.bank{background:var(--bank)}
-#map{height:620px;min-height:420px;width:100%;background:#dfe7ef;border:1px solid var(--border);z-index:0}.map-error{display:none;margin:8px 0;color:#b42318}.source{margin:5px 0;font-size:12px}.latest-report{margin:14px 0 10px;font-size:18px;line-height:1.65;font-weight:500}.table-wrap{overflow-x:auto;margin-top:12px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:500}td:first-child{white-space:nowrap}a{color:#1677d2}.leaflet-popup-content{font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.leaflet-popup-content strong{font-weight:600}.leaflet-control-attribution{font-size:11px}
-.map-back-link{position:fixed;right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));z-index:10000;display:inline-flex;align-items:center;min-height:42px;padding:7px 14px;border:1px solid #b6322a;border-radius:999px;background:light-dark(#fff7f5,#2b1c1a);color:light-dark(#8b211b,#ffb4aa);font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.22)}.map-back-link:hover,.map-back-link:focus-visible{background:light-dark(#fff1ed,#3a2320);outline:2px solid #b6322a;outline-offset:2px}
-@media(max-width:600px){body{padding:7px 7px 72px}#map{height:min(56vh,440px);min-height:320px;touch-action:pan-y!important}th,td{padding:6px 5px;font-size:12px}.map-back-link{left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));justify-content:center;min-height:46px}}
+#map{height:620px;min-height:420px;width:100%;background:#dfe7ef;border:1px solid var(--border);z-index:0}.map-error{display:none;margin:8px 0;color:#b42318}.source{margin:5px 0;font-size:12px}.latest-report{margin:14px 0 10px;font-size:18px;line-height:1.65;font-weight:500}.external-note{margin:7px 0;padding:8px 10px;border-left:4px solid #1677d2;background:light-dark(#eef7ff,#152536);font-size:13px;font-weight:600}.table-wrap{overflow-x:auto;margin-top:12px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:500}td:first-child{white-space:nowrap}a{color:#1677d2}.leaflet-popup-content{font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.leaflet-popup-content strong{font-weight:600}.leaflet-control-attribution{font-size:11px}
+@media(max-width:600px){body{padding:7px}#map{height:min(56vh,440px);min-height:320px;touch-action:pan-y!important}th,td{padding:6px 5px;font-size:12px}}
 </style></head><body><main>
-<a class="map-back-link" href="./flood.html" target="_self">← 両毛地域水害マップへ戻る</a>
 <h1>太田市 水害情報マップ（2026年7月17日以降）</h1>
 <p class="note">国土地理院の標準地図に、公開投稿・公式情報の地点を重ねています。丸印を選ぶと詳細と参照元を表示します。</p>
+<p class="external-note">市・県・国の公式情報、報道資料、X、Threadsなどの参照元は別タブで開きます。水害マップはこの画面に残ります。</p>
 <div class="legend"><span><i class="dot flood"></i>冠水</span><span><i class="dot closed"></i>通行止め</span><span><i class="dot road"></i>道路損壊・陥没</span><span><i class="dot landslide"></i>土砂災害</span><span><i class="dot bank"></i>護岸崩壊</span></div>
 <div id="map" role="application" aria-label="国土地理院標準地図を背景にした太田市水害情報地図"></div>
 <p id="map-error" class="map-error">背景地図を読み込めませんでした。インターネット接続を確認して再読み込みしてください。</p>
-<p class="latest-report">太田市：成塚町・西長岡町の市道通行止めを確認しました。県道桐生新田木崎線の土砂流出規制は7月22日5時1分の現行一覧から削除されています。<a href="https://www.city.ota.gunma.jp/page/1062223.html" target="_blank" rel="noopener">太田市公式</a></p>
-<p class="source">背景地図：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院「地理院タイル（標準地図）」</a>　｜　<a href="ota-flood-incidents-from-2026-07-17.csv" download>一覧をCSVで保存</a></p>
+<p class="latest-report">太田市：成塚町・西長岡町の市道通行止めを確認しました。県道桐生新田木崎線の土砂流出規制は7月22日5時1分の現行一覧から削除されています。<a href="https://www.city.ota.gunma.jp/page/1062223.html" target="_blank" rel="noopener noreferrer">太田市公式</a></p>
+<p class="source">背景地図：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">国土地理院「地理院タイル（標準地図）」</a>　｜　<a href="ota-flood-incidents-from-2026-07-17.csv" download>一覧をCSVで保存</a></p>
 <p class="source"><strong>最終確認：2026年7月22日</strong></p>
 <p class="source">市・県の公式通行規制は「確度：高」、地点別の公開投稿・二次情報は「確度：中」「公式地点別未確認」としています。直接確認できるThreads投稿は見つからなかったため収録していません。</p>
 <div class="table-wrap"><table><thead><tr><th>日時</th><th>場所</th><th>被害</th><th>確度</th><th>投稿元</th></tr></thead><tbody id="rows"></tbody></table></div>
@@ -700,17 +699,18 @@ const category=d=>d.damage.includes("護岸")?"bank":d.damage.includes("陥没")
 const colors={flood:"#1677d2",closed:"#e06a16",road:"#278c4b",landslide:"#b34276",bank:"#7252c7"};
 const isMobile=window.matchMedia("(max-width: 600px)").matches;
 const map=L.map("map",{zoomControl:true,dragging:!isMobile,touchZoom:!isMobile,scrollWheelZoom:!isMobile,doubleClickZoom:!isMobile,boxZoom:!isMobile,keyboard:!isMobile,tap:!isMobile}).setView([36.305,139.35],12);
+map.attributionControl.setPrefix('<a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet</a>');
 let tileErrors=0;
-const tiles=L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",{minZoom:5,maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener">国土地理院</a>'});
+const tiles=L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",{minZoom:5,maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener noreferrer">国土地理院</a>'});
 tiles.on("tileerror",()=>{tileErrors++;if(tileErrors>3)document.getElementById("map-error").style.display="block"});
 tiles.addTo(map);
 const bounds=[];
 incidents.forEach(d=>{
  const color=colors[category(d)];
  const marker=L.circleMarker([d.lat,d.lon],{radius:7,color:"#fff",weight:2,fillColor:color,fillOpacity:.95}).addTo(map);
- marker.bindPopup('<strong>'+escapeHtml(d.place)+'</strong><br>'+escapeHtml(d.time)+' JST・確度 '+escapeHtml(d.confidence)+'<br>'+escapeHtml(d.damage)+'：'+escapeHtml(d.status)+'<br><small>位置：'+escapeHtml(d.precision)+'<br>'+escapeHtml(d.note)+'</small><br><a href="'+escapeHtml(d.url)+'" target="_blank" rel="noopener">参照元を開く</a>');
+ marker.bindPopup('<strong>'+escapeHtml(d.place)+'</strong><br>'+escapeHtml(d.time)+' JST・確度 '+escapeHtml(d.confidence)+'<br>'+escapeHtml(d.damage)+'：'+escapeHtml(d.status)+'<br><small>位置：'+escapeHtml(d.precision)+'<br>'+escapeHtml(d.note)+'</small><br><a href="'+escapeHtml(d.url)+'" target="_blank" rel="noopener noreferrer">参照元を別タブで開く</a>');
  bounds.push([d.lat,d.lon]);
 });
 map.fitBounds(bounds,{padding:[28,28],maxZoom:13});
-document.getElementById("rows").innerHTML=incidents.slice().sort((a,b)=>a.time.localeCompare(b.time)).map(d=>'<tr><td>'+escapeHtml(d.time.slice(5))+'</td><td><a href="'+escapeHtml(d.url)+'" target="_blank" rel="noopener">'+escapeHtml(d.place)+'</a></td><td>'+escapeHtml(d.damage)+'</td><td>'+escapeHtml(d.confidence)+'</td><td>'+escapeHtml(d.source)+'</td></tr>').join("");
+document.getElementById("rows").innerHTML=incidents.slice().sort((a,b)=>a.time.localeCompare(b.time)).map(d=>'<tr><td>'+escapeHtml(d.time.slice(5))+'</td><td><a href="'+escapeHtml(d.url)+'" target="_blank" rel="noopener noreferrer" title="参照元を別タブで開く">'+escapeHtml(d.place)+'</a></td><td>'+escapeHtml(d.damage)+'</td><td>'+escapeHtml(d.confidence)+'</td><td>'+escapeHtml(d.source)+'</td></tr>').join("");
 </script></body></html>
