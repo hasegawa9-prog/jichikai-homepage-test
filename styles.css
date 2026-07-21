@@ -390,7 +390,7 @@ h3 {
   position: absolute;
   top: clamp(1.2rem, 4vw, 2.8rem);
   right: 1.2rem;
-  width: min(44vw, 34rem);
+  width: min(54vw, 42rem);
   margin: 0;
   opacity: 0.96;
 }
@@ -408,6 +408,12 @@ h3 {
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(95, 31, 26, 0.14);
   background: white;
+}
+
+.hero-media-grid img.qr-image {
+  object-fit: contain;
+  image-rendering: pixelated;
+  padding: 0.4rem;
 }
 
 .hero-visual figcaption {
