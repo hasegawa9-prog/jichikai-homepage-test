@@ -236,6 +236,30 @@ input {
   text-underline-offset: 0.2em;
 }
 
+.flood-top-report {
+  display: grid;
+  gap: 0.35rem;
+  width: min(100%, 46rem);
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #b33a2f;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #62423e;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.flood-top-report > strong {
+  color: #4a1714;
+}
+
+.flood-top-report-links a {
+  color: #8b211b;
+  font-weight: 900;
+  text-underline-offset: 0.2em;
+}
+
 .hero-copy {
   position: relative;
   z-index: 1;
