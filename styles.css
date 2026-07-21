@@ -237,9 +237,21 @@ input {
 }
 
 .notice-strip .ryomo-flood-link {
-  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  display: grid;
+  gap: 0.1rem;
   font-weight: 900;
   line-height: 1.25;
+}
+
+.notice-strip .ryomo-flood-link > span {
+  color: inherit;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+}
+
+.notice-strip .ryomo-flood-link > small {
+  color: inherit;
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
+  font-weight: 800;
 }
 
 .hero-copy {
