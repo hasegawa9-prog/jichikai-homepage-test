@@ -676,9 +676,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <div class="legend"><span><i class="dot flood"></i>冠水</span><span><i class="dot closed"></i>通行止め</span><span><i class="dot road"></i>道路損壊・陥没</span><span><i class="dot landslide"></i>土砂災害</span><span><i class="dot bank"></i>護岸崩壊</span></div>
 <div id="map" role="application" aria-label="国土地理院標準地図を背景にした桐生市水害情報地図"></div>
 <p id="map-error" class="map-error">背景地図を読み込めませんでした。インターネット接続を確認して再読み込みしてください。</p>
-<p class="latest-report">桐生市：7月21日16時時点で通行止め2件、道路被害101件、床上浸水15件、床下浸水12件。東武桐生線は土砂流出の影響が継続しています。<a href="https://www.city.kiryu.lg.jp/anzen/bousai/1027415.html" target="_blank" rel="noopener noreferrer">桐生市公式</a></p>
+<p class="latest-report">桐生市：7月21日16時時点で通行止め2件、道路被害101件、床上浸水15件、床下浸水12件。東武桐生線は新桐生～赤城間の終日運休と太田～新桐生間の特別ダイヤが継続しています。<a href="https://www.city.kiryu.lg.jp/anzen/bousai/1027415.html" target="_blank" rel="noopener noreferrer">桐生市公式</a></p>
 <p class="source">背景地図：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">国土地理院「地理院タイル（標準地図）」</a>　｜　<a href="kiryu-flood-incidents-from-2026-07-17.csv" download>一覧をCSVで保存</a></p>
-<p class="source"><strong>最終確認：2026年7月23日</strong></p>
+<p class="source"><strong>最終確認：2026年7月24日</strong></p>
 <p class="source">桐生市公式発表を優先し、公開投稿のみの情報は「確度：中」としています。直接確認できるThreads投稿は見つからなかったため収録していません。</p>
 <div class="table-wrap"><table><thead><tr><th>日時</th><th>場所</th><th>被害</th><th>確度</th><th>投稿元</th></tr></thead><tbody id="rows"></tbody></table></div>
 </main>
@@ -696,7 +696,7 @@ Object.assign(incidents.find(d=>d.id===4),{status:"床上12件・床下7件",not
 Object.assign(incidents.find(d=>d.id===7),{status:"床上2件・床下3件。市内全体で土砂崩れ3件、土砂流出34件、法面崩落3件",note:"地区別浸水集計と市内全体の道路被害集計。土砂災害の個別地点は未公表"});
 incidents.push(
  {"id":13,"time":"2026-07-21","source":"桐生市（被害状況）","place":"白葉峠付近の市道","damage":"土砂災害・通行止め","status":"市道を通行止め（7月21日16時現在）","confidence":"高","lat":36.410,"lon":139.378,"precision":"峠・路線概略点","url":"https://www.city.kiryu.lg.jp/anzen/bousai/1027415.html","note":"桐生市公式の現行通行止め一覧。詳細地点は未公表のため峠付近に概略表示"},
- {"id":14,"time":"2026-07-17","source":"東武鉄道","place":"東武桐生線（新桐生〜相老付近）","damage":"土砂流出・運転見合わせ","status":"大雨による土砂流出で一部区間の運転見合わせが継続","confidence":"高","lat":36.404,"lon":139.318,"precision":"区間概略点","url":"https://www.tobu.co.jp/railway/","note":"東武鉄道公式が7月23日時点も土砂流出と特別ダイヤを掲載。発生地点の詳細は未公表"}
+ {"id":14,"time":"2026-07-17","source":"東武鉄道","place":"東武桐生線（新桐生〜相老付近）","damage":"土砂流出・運転見合わせ","status":"新桐生〜赤城間は終日運休、太田〜新桐生間は特別ダイヤ（7月24日確認）","confidence":"高","lat":36.404,"lon":139.318,"precision":"区間概略点","url":"https://www.tobu.co.jp/railway/","note":"東武鉄道公式が土砂流出と特別ダイヤを掲載。土砂流出は広沢町2丁目の新桐生〜相老駅間"}
 );
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const category=d=>d.damage.includes("護岸")?"bank":d.damage.includes("陥没")||d.damage.includes("損壊")?"road":d.damage.includes("土砂")?"landslide":d.damage.includes("通行止め")&&!d.damage.includes("冠水")?"closed":"flood";

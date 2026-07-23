@@ -676,9 +676,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <div class="legend"><span><i class="dot flood"></i>冠水</span><span><i class="dot closed"></i>通行止め</span><span><i class="dot road"></i>道路損壊・陥没</span><span><i class="dot landslide"></i>土砂災害</span><span><i class="dot bank"></i>護岸崩壊</span></div>
 <div id="map" role="application" aria-label="国土地理院標準地図を背景にした太田市水害情報地図"></div>
 <p id="map-error" class="map-error">背景地図を読み込めませんでした。インターネット接続を確認して再読み込みしてください。</p>
-<p class="latest-report">太田市：7月22日17時現在、成塚町、西長岡町、藪塚町、丸山町、藤阿久町、大島町で市道7区間の通行止めを確認しました。県道桐生新田木崎線の土砂流出規制は現行一覧から削除されています。<a href="https://www.city.ota.gunma.jp/page/1062223.html" target="_blank" rel="noopener noreferrer">太田市公式</a></p>
+<p class="latest-report">太田市：7月23日17時現在、成塚町、西長岡町（山道）、藪塚町、藤阿久町、大島町（大手橋）で市道5区間の通行止めを確認しました。西長岡町の市道1区間と丸山町は現行一覧から削除されています。県道桐生新田木崎線の土砂流出規制も現行一覧から削除されています。<a href="https://www.city.ota.gunma.jp/page/1062223.html" target="_blank" rel="noopener noreferrer">太田市公式</a></p>
 <p class="source">背景地図：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">国土地理院「地理院タイル（標準地図）」</a>　｜　<a href="ota-flood-incidents-from-2026-07-17.csv" download>一覧をCSVで保存</a></p>
-<p class="source"><strong>最終確認：2026年7月23日</strong></p>
+<p class="source"><strong>最終確認：2026年7月24日</strong></p>
 <p class="source">市・県の公式通行規制は「確度：高」、地点別の公開投稿・二次情報は「確度：中」「公式地点別未確認」としています。直接確認できるThreads投稿は見つからなかったため収録していません。</p>
 <div class="table-wrap"><table><thead><tr><th>日時</th><th>場所</th><th>被害</th><th>確度</th><th>投稿元</th></tr></thead><tbody id="rows"></tbody></table></div>
 </main>
@@ -704,6 +704,10 @@ incidents.push(
  {"id":16,"time":"2026-07-22 17:00","source":"太田市（市道通行止め情報）","place":"藤阿久町地内","damage":"通行止め","status":"市道を通行止め（7月22日17時現在）","confidence":"高","lat":36.299154,"lon":139.354286,"precision":"路線代表点","url":"https://www.city.ota.gunma.jp/page/1062223.html","note":"太田市公式の7月22日更新一覧と公開地図で確認。開始時刻と原因は未公表"},
  {"id":17,"time":"2026-07-22 17:00","source":"太田市（市道通行止め情報）","place":"大島町地内（大手橋）","damage":"通行止め","status":"市道を通行止め（7月22日17時現在）","confidence":"高","lat":36.313468,"lon":139.358568,"precision":"施設・路線代表点","url":"https://www.city.ota.gunma.jp/page/1062223.html","note":"太田市公式の7月22日更新一覧と公開地図で確認。開始時刻と原因は未公表"}
 );
+Object.assign(incidents.find(d=>d.id===10),{status:"歩道のみ通行止め（7月23日17時現在）",note:"太田市公式の7月23日17時現在一覧に掲載。開始時刻と原因は未公表"});
+Object.assign(incidents.find(d=>d.id===11),{status:"7月23日17時までに現行一覧から削除",note:"太田市公式の7月23日17時現在一覧から削除。解除時刻は未公表"});
+[13,14,16,17].forEach(id=>Object.assign(incidents.find(d=>d.id===id),{status:"市道を通行止め（7月23日17時現在）",note:"太田市公式の7月23日17時現在一覧に掲載。開始時刻と原因は未公表"}));
+Object.assign(incidents.find(d=>d.id===15),{status:"7月23日17時までに現行一覧から削除",note:"太田市公式の7月23日17時現在一覧から削除。解除時刻は未公表"});
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const category=d=>d.damage.includes("護岸")?"bank":d.damage.includes("陥没")||d.damage.includes("損壊")?"road":d.damage.includes("土砂")?"landslide":d.damage.includes("通行止め")&&!d.damage.includes("冠水")?"closed":"flood";
 const colors={flood:"#1677d2",closed:"#e06a16",road:"#278c4b",landslide:"#b34276",bank:"#7252c7"};
