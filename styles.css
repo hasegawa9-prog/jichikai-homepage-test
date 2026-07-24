@@ -264,6 +264,50 @@ input {
   line-height: 1.65;
 }
 
+.volunteer-summary {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.55fr);
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(139, 33, 27, 0.22);
+}
+
+.volunteer-summary h2,
+.volunteer-summary p {
+  margin: 0;
+}
+
+.volunteer-summary h2 {
+  margin-bottom: 0.25rem;
+  color: #6f201a;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.volunteer-summary .volunteer-kicker {
+  margin-bottom: 0.15rem;
+  color: #8b211b;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.volunteer-links {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+}
+
+.volunteer-links a {
+  display: block;
+}
+
+.volunteer-summary .volunteer-note {
+  grid-column: 1 / -1;
+  color: #62423e;
+  font-size: 0.78rem;
+}
+
 .hero-copy {
   position: relative;
   z-index: 1;
@@ -1160,6 +1204,14 @@ h3 {
   .notice-strip,
   .emergency-panel {
     grid-template-columns: 1fr;
+  }
+
+  .volunteer-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .volunteer-summary .volunteer-note {
+    grid-column: auto;
   }
 
   .quick-actions,

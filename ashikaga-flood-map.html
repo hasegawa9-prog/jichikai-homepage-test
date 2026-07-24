@@ -666,7 +666,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <style>
 :root{color-scheme:light dark;--bg:light-dark(#fff,#181818);--fg:light-dark(#1a1c1f,#fff);--border:light-dark(#cbd4dd,#555);--flood:#1677d2;--closed:#e06a16;--road:#278c4b;--landslide:#b34276;--bank:#7252c7}
 *{box-sizing:border-box}body{margin:0;padding:14px;background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1180px;margin:auto}h1{font-size:1.35rem;font-weight:500;margin:0 0 6px}.note{margin:0 0 8px}.legend{display:flex;flex-wrap:wrap;gap:7px 16px;margin:7px 0}.legend span{display:flex;align-items:center;gap:5px}.dot{width:11px;height:11px;border-radius:50%;display:inline-block}.flood{background:var(--flood)}.closed{background:var(--closed)}.road{background:var(--road)}.landslide{background:var(--landslide)}.bank{background:var(--bank)}
-#map{height:620px;min-height:420px;width:100%;background:#dfe7ef;border:1px solid var(--border);z-index:0}.map-error{display:none;margin:8px 0;color:#b42318}.back-link{display:inline-block;margin:0 0 8px;font-weight:700}.source{margin:5px 0;font-size:12px}.latest-report{margin:14px 0 10px;font-size:18px;line-height:1.65;font-weight:500}.external-note{margin:7px 0;padding:8px 10px;border-left:4px solid #1677d2;background:light-dark(#eef7ff,#152536);font-size:13px;font-weight:600}.table-wrap{overflow-x:auto;margin-top:12px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:500}td:first-child{white-space:nowrap}a{color:#1677d2}.leaflet-popup-content{font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.leaflet-popup-content strong{font-weight:600}.leaflet-control-attribution{font-size:11px}
+#map{height:620px;min-height:420px;width:100%;background:#dfe7ef;border:1px solid var(--border);z-index:0}.map-error{display:none;margin:8px 0;color:#b42318}.back-link{display:inline-block;margin:0 0 8px;font-weight:700}.source{margin:5px 0;font-size:12px}.latest-report{margin:14px 0 10px;font-size:18px;line-height:1.65;font-weight:500}.external-note{margin:7px 0;padding:8px 10px;border-left:4px solid #1677d2;background:light-dark(#eef7ff,#152536);font-size:13px;font-weight:600}.volunteer-card{margin:14px 0;padding:14px;border:1px solid light-dark(#d4b66f,#806f40);border-radius:10px;background:light-dark(#fff9e8,#292516)}.volunteer-card h2{margin:0 0 6px;font-size:1.15rem}.volunteer-card p{margin:5px 0}.volunteer-status{display:inline-block;margin-right:7px;padding:2px 8px;border-radius:999px;background:light-dark(#dcefe2,#21412b);color:light-dark(#165c31,#c9f7d6);font-weight:700}.volunteer-links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:9px}.volunteer-note{font-size:12px}.table-wrap{overflow-x:auto;margin-top:12px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:500}td:first-child{white-space:nowrap}a{color:#1677d2}.leaflet-popup-content{font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.leaflet-popup-content strong{font-weight:600}.leaflet-control-attribution{font-size:11px}
 @media(max-width:600px){body{padding:7px}#map{height:min(56vh,440px);min-height:320px;touch-action:pan-y!important}th,td{padding:6px 5px;font-size:12px}}
 </style></head><body><main>
 <a class="back-link" href="flood.html">← 両毛地域水害マップへ戻る</a>
@@ -678,6 +678,22 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <p id="map-error" class="map-error">背景地図を読み込めませんでした。インターネット接続を確認して再読み込みしてください。</p>
 <!-- 毎日の水害情報更新でも、公式発表と報道資料の両リンクを保持する -->
 <p class="latest-report">足利市：7月22日12時時点で住家被害235棟、道路被害316件、崖（土砂）崩れ64箇所。市道は7月22日現在12区間、林道は7月21日時点で4路線の通行止めを確認しました。県道松田葉鹿線の松田町駐在所付近は片側交互通行です。<a href="https://www.city.ashikaga.tochigi.jp/manage/contents/upload/6a61c3cbc0b93.pdf" target="_blank" rel="noopener noreferrer">足利市第5報（公式PDF）</a>　｜　<a href="https://ashikaga.keizai.biz/headline/1109/" target="_blank" rel="noopener noreferrer">報道資料（足利経済新聞）</a></p>
+<!-- 毎朝、足利市のみ災害ボランティア募集・活動情報と公式SNSリンクを更新する。被害地点データには含めない -->
+<section class="volunteer-card" aria-labelledby="volunteer-title">
+  <h2 id="volunteer-title">足利市 災害ボランティア情報</h2>
+  <p><span class="volunteer-status">募集中</span><strong>7月23日〜27日分</strong>（7月24日確認）</p>
+  <p>足利市社会福祉協議会が活動参加者を募集しています。対象は原則18歳以上で、居住地の制限はありません。受付は8:30〜9:00、活動は9:30〜14:30を予定し、集合場所は足利市総合福祉センターです。申込み前に持ち物とボランティア活動保険の案内を必ず確認してください。</p>
+  <p>足利市災害ボランティアセンターは7月19日に設置され、被災した方の依頼と参加者をつなぐ活動を行っています。運営資金への協力案内も公開されています。</p>
+  <div class="volunteer-links" aria-label="災害ボランティアの参照元">
+    <a href="https://www.ashikagashakyo.or.jp/news/info/73298" target="_blank" rel="noopener noreferrer">募集・申込み（足利市社協）</a>
+    <a href="https://www.ashikagashakyo.or.jp/news/73325" target="_blank" rel="noopener noreferrer">参加者向け案内</a>
+    <a href="https://www.ashikagashakyo.or.jp/news/73309" target="_blank" rel="noopener noreferrer">活動・運営支援の案内</a>
+    <a href="https://www.instagram.com/p/DbA_vtskwFD/" target="_blank" rel="noopener noreferrer">Instagramの募集投稿</a>
+    <a href="https://www.instagram.com/ashikaga_shakyo/" target="_blank" rel="noopener noreferrer">公式Instagram</a>
+    <a href="https://www.facebook.com/ashishakyo/" target="_blank" rel="noopener noreferrer">公式Facebook</a>
+  </div>
+  <p class="volunteer-note">この案内は被害地点・地図マーカー・CSVの件数には含めません。SNSは公式サイトから確認できる公開アカウント・元投稿のみ掲載し、個人宅の場所や参加者を特定できる情報、写真は転載しません。</p>
+</section>
 <p class="source"><strong>最終確認：2026年7月24日</strong>　地図の地点情報は、場所を確認できた公開情報のみ掲載しています。</p>
 <p class="source">背景地図：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">国土地理院「地理院タイル（標準地図）」</a>　｜　<a href="ashikaga-flood-incidents.csv" download>一覧をCSVで保存</a></p>
 <div class="table-wrap"><table><thead><tr><th>日時</th><th>場所</th><th>被害</th><th>確度</th><th>投稿元</th></tr></thead><tbody id="rows"></tbody></table></div>
