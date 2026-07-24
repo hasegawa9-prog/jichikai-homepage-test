@@ -8,7 +8,7 @@
       name="description"
       content="栃木県足利市の葉鹿下町自治会＆育成会向けに、回覧板、防災情報、ごみ収集をまとめたホームページ。"
     />
-    <link rel="stylesheet" href="styles.css?v=20260724-disaster-news" />
+    <link rel="stylesheet" href="styles.css?v=20260724-flood-readability" />
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
@@ -36,14 +36,20 @@
 
     <main id="main">
       <section class="notice-strip" aria-label="緊急時の確認">
-        <strong>大雨・台風・地震時の確認</strong>
-        <a href="disaster.html">防災ページへ</a>
-        <a class="ryomo-flood-link" href="flood.html">
-          <span>両毛地域水害マップ</span>
-          <small>2026年7月17日以降の情報</small>
-        </a>
+        <div class="flood-alert-header">
+          <div class="flood-alert-title">
+            <small>災害情報</small>
+            <strong>大雨・台風・地震時の確認</strong>
+          </div>
+          <a class="disaster-portal-link" href="disaster.html">足利市の防災情報</a>
+          <a class="ryomo-flood-link" href="flood.html">
+            <span>両毛地域水害マップ</span>
+            <small>2026年7月17日以降の情報</small>
+          </a>
+        </div>
         <!-- 毎日の水害情報更新でも、公式発表と報道資料の両リンクを保持する -->
         <p class="flood-summary">
+          <span class="summary-label">足利市 最新被害概要</span>
           足利市：7月22日12時時点で住家被害235棟、道路被害316件、崖（土砂）崩れ64箇所。市道は7月22日現在12区間で通行止め、県道松田葉鹿線の松田町駐在所付近は片側交互通行です。
           <a href="https://www.city.ashikaga.tochigi.jp/manage/contents/upload/6a61c3cbc0b93.pdf" target="_blank" rel="noopener noreferrer">足利市第5報（公式PDF）</a>
           ｜
@@ -52,7 +58,7 @@
         <!-- 毎朝、足利市のみ災害ボランティア募集・活動情報と公式SNSリンクを更新する -->
         <section class="volunteer-summary" aria-labelledby="ashikaga-volunteer-title">
           <div>
-            <p class="volunteer-kicker">足利市のみ・7月24日確認</p>
+            <p class="volunteer-kicker"><span>募集中</span> 足利市のみ・7月24日確認</p>
             <h2 id="ashikaga-volunteer-title">災害ボランティア情報</h2>
             <p>
               足利市社会福祉協議会が7月23日〜27日の活動参加者を募集中です。原則18歳以上、居住地の制限はありません。活動前に申込方法・持ち物・保険を公式案内で確認してください。

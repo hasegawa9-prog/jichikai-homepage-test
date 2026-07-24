@@ -211,24 +211,44 @@ input {
 
 .notice-strip {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 0.75rem 1rem;
-  align-items: center;
+  gap: 0.9rem;
   max-width: 1180px;
   margin: 1rem auto 0;
-  padding: 0.85rem 1.2rem;
-  border: 1px solid #e0afa8;
-  border-radius: 8px;
-  background: #fff1ed;
+  padding: clamp(0.85rem, 2.5vw, 1.35rem);
+  border: 1px solid #e5b9b2;
+  border-top: 5px solid #9f261f;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 92% 2%, rgba(196, 66, 54, 0.12), transparent 25rem),
+    #fff4f1;
   color: #4a1714;
+  box-shadow: 0 16px 38px rgba(95, 31, 26, 0.1);
 }
 
-.notice-strip strong {
+.flood-alert-header {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) auto minmax(16rem, auto);
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.flood-alert-title {
+  display: grid;
+  align-content: center;
+  gap: 0.05rem;
+}
+
+.flood-alert-title small {
   color: #8b211b;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
 }
 
-.notice-strip span {
-  color: #62423e;
+.flood-alert-title strong {
+  color: #5b1b17;
+  font-size: clamp(1.1rem, 2.3vw, 1.45rem);
+  line-height: 1.35;
 }
 
 .notice-strip a,
@@ -238,40 +258,81 @@ input {
   text-underline-offset: 0.2em;
 }
 
+.disaster-portal-link,
+.notice-strip .ryomo-flood-link {
+  display: grid;
+  place-content: center;
+  min-height: 3.7rem;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.disaster-portal-link {
+  border: 1px solid #d7aaa4;
+  background: rgba(255, 255, 255, 0.78);
+}
+
 .notice-strip .ryomo-flood-link {
   display: grid;
   gap: 0.1rem;
+  color: white;
+  background: linear-gradient(135deg, #a92d25, #7d1f19);
   font-weight: 900;
   line-height: 1.25;
+  box-shadow: 0 9px 20px rgba(125, 31, 25, 0.22);
+}
+
+.disaster-portal-link:hover,
+.disaster-portal-link:focus-visible,
+.notice-strip .ryomo-flood-link:hover,
+.notice-strip .ryomo-flood-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 24px rgba(95, 31, 26, 0.18);
 }
 
 .notice-strip .ryomo-flood-link > span {
-  color: inherit;
+  color: white;
   font-size: clamp(1.25rem, 2.4vw, 1.7rem);
 }
 
 .notice-strip .ryomo-flood-link > small {
-  color: inherit;
+  color: #ffe4df;
   font-size: clamp(0.8rem, 1.4vw, 1rem);
   font-weight: 800;
 }
 
 .notice-strip .flood-summary {
-  grid-column: 1 / -1;
   margin: 0;
-  padding-top: 0.7rem;
-  border-top: 1px solid rgba(139, 33, 27, 0.22);
-  line-height: 1.65;
+  padding: 1rem 1.1rem;
+  border: 1px solid #ead0cb;
+  border-left: 5px solid #a92d25;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+}
+
+.summary-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #8b211b;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
 }
 
 .volunteer-summary {
   display: grid;
-  grid-column: 1 / -1;
   grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.55fr);
   gap: 0.75rem 1.25rem;
-  margin-top: 0.1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(139, 33, 27, 0.22);
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  border: 1px solid #bcd8c4;
+  border-left: 5px solid #27804a;
+  border-radius: 14px;
+  background: #f5fbf7;
+  color: #263c2d;
 }
 
 .volunteer-summary h2,
@@ -281,41 +342,66 @@ input {
 
 .volunteer-summary h2 {
   margin-bottom: 0.25rem;
-  color: #6f201a;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: #155f34;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
 }
 
 .volunteer-summary .volunteer-kicker {
   margin-bottom: 0.15rem;
-  color: #8b211b;
+  color: #27603a;
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+.volunteer-kicker span {
+  display: inline-flex;
+  margin-right: 0.35rem;
+  border-radius: 999px;
+  padding: 0.12rem 0.55rem;
+  color: white;
+  background: #27804a;
 }
 
 .volunteer-links {
   display: grid;
   align-content: start;
-  gap: 0.35rem;
+  gap: 0.45rem;
 }
 
 .volunteer-links a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.45rem;
+  border: 1px solid #bcd8c4;
+  border-radius: 9px;
+  padding: 0.35rem 0.7rem;
+  background: white;
+  color: #176638;
+  text-decoration: none;
+}
+
+.volunteer-links a::after {
+  content: "↗";
+  margin-left: 0.6rem;
 }
 
 .volunteer-summary .volunteer-note {
   grid-column: 1 / -1;
-  color: #62423e;
+  color: #496251;
   font-size: 0.78rem;
 }
 
 .disaster-news-summary {
   display: grid;
-  grid-column: 1 / -1;
   grid-template-columns: minmax(13rem, 0.42fr) minmax(0, 1fr);
   gap: 0.75rem 1.25rem;
-  margin-top: 0.1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(139, 33, 27, 0.22);
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  border: 1px solid #c6d8e7;
+  border-left: 5px solid #347aaa;
+  border-radius: 14px;
+  background: #f5f9fc;
+  color: #243746;
 }
 
 .disaster-news-heading h2,
@@ -325,21 +411,21 @@ input {
 }
 
 .disaster-news-heading h2 {
-  color: #6f201a;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: #195b86;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
   line-height: 1.4;
 }
 
 .disaster-news-heading p {
   margin-bottom: 0.15rem;
-  color: #8b211b;
+  color: #39657f;
   font-size: 0.78rem;
   font-weight: 800;
 }
 
 .disaster-news-list {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.45rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -347,26 +433,35 @@ input {
 
 .disaster-news-list li {
   display: grid;
-  grid-template-columns: 2.6rem minmax(0, 1fr);
+  grid-template-columns: 3rem minmax(0, 1fr);
   gap: 0.05rem 0.6rem;
   align-items: start;
+  border: 1px solid #d3e1ec;
+  border-radius: 9px;
+  padding: 0.55rem 0.65rem;
+  background: white;
 }
 
 .disaster-news-list time {
   grid-row: 1 / 3;
-  color: #8b211b;
+  display: grid;
+  place-items: center;
+  min-height: 2.6rem;
+  border-radius: 7px;
+  color: #195b86;
+  background: #e8f2f8;
   font-size: 0.8rem;
   font-weight: 800;
 }
 
 .disaster-news-list small {
-  color: #62423e;
+  color: #607483;
   font-size: 0.72rem;
 }
 
 .disaster-news-note {
   grid-column: 1 / -1;
-  color: #62423e;
+  color: #607483;
   font-size: 0.78rem;
 }
 
@@ -1268,6 +1363,14 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .flood-alert-header {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .flood-alert-title {
+    grid-column: 1 / -1;
+  }
+
   .volunteer-summary {
     grid-template-columns: 1fr;
   }
@@ -1314,6 +1417,32 @@ h3 {
 }
 
 @media (max-width: 560px) {
+  .notice-strip {
+    margin: 0.65rem 0.65rem 0;
+    border-radius: 15px;
+  }
+
+  .flood-alert-header {
+    grid-template-columns: 1fr;
+  }
+
+  .flood-alert-title,
+  .disaster-portal-link,
+  .notice-strip .ryomo-flood-link {
+    grid-column: 1;
+  }
+
+  .notice-strip .flood-summary,
+  .volunteer-summary,
+  .disaster-news-summary {
+    padding: 0.9rem;
+  }
+
+  .disaster-news-list li {
+    grid-template-columns: 2.8rem minmax(0, 1fr);
+    padding: 0.5rem;
+  }
+
   .section-head,
   .site-footer,
   .life-card li {
