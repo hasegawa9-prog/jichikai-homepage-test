@@ -681,7 +681,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <!-- 毎朝、足利市のみ災害ボランティア募集・活動情報と公式SNSリンクを更新する。被害地点データには含めない -->
 <section class="volunteer-card" aria-labelledby="volunteer-title">
   <h2 id="volunteer-title">足利市 災害ボランティア情報</h2>
-  <p><span class="volunteer-status">募集中</span><strong>7月28日〜8月2日分</strong>（7月26日確認）</p>
+  <p><span class="volunteer-status">募集中</span><strong>7月28日〜8月2日分</strong>（7月27日確認）</p>
   <p>足利市社会福祉協議会が活動参加者を受付中です。7月23日〜27日分は締め切られました。対象は原則18歳以上で、居住地の制限はありません。受付は8:30〜9:00、活動は9:30〜14:30を予定し、集合場所は足利市総合福祉センターです。申込み前に持ち物とボランティア活動保険の案内を必ず確認してください。</p>
   <p>足利市災害ボランティアセンターは7月19日に設置され、被災した方の依頼と参加者をつなぐ活動を行っています。運営資金への協力案内も公開されています。</p>
   <div class="volunteer-links" aria-label="災害ボランティアの参照元">
@@ -697,7 +697,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <!-- 毎朝、足利市の今回の豪雨災害に関するネットニュースを検索し、最新順に更新する。被害地点データには含めない -->
 <section class="news-card" aria-labelledby="disaster-news-title">
   <h2 id="disaster-news-title">足利市 今回の災害に関するネットニュース</h2>
-  <p><strong>最終確認：2026年7月26日</strong>　記事本文を直接確認できる報道を最新順に掲載しています。</p>
+  <p><strong>最終確認：2026年7月27日</strong>　記事本文を直接確認できる報道を最新順に掲載しています。</p>
   <ol class="news-list">
     <li><time datetime="2026-07-24">7/24</time><a href="https://www.jrc.or.jp/chapter/tochigi/about/topics/2026/0724_054506.html" target="_blank" rel="noopener noreferrer">日赤が災害ボランティアの熱中症予防を支援</a><small>日本赤十字社 栃木県支部</small></li>
     <li><time datetime="2026-07-23">7/23</time><a href="https://news.livedoor.com/article/detail/31899975/" target="_blank" rel="noopener noreferrer">災害ボランティア支援が本格化、約80人が参加</a><small>とちぎテレビ／ライブドアニュース</small></li>
@@ -709,7 +709,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </ol>
   <p class="news-note">転載記事は配信元を併記しています。個人名・個人宅の詳細位置・記事写真は転載しません。このニュース欄は地図マーカー・CSV件数には含めません。</p>
 </section>
-<p class="source"><strong>最終確認：2026年7月26日</strong>　地図の地点情報は、場所を確認できた公開情報のみ掲載しています。</p>
+<p class="source"><strong>最終確認：2026年7月27日</strong>　地図の地点情報は、場所を確認できた公開情報のみ掲載しています。</p>
 <p class="source">背景地図：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">国土地理院「地理院タイル（標準地図）」</a>　｜　<a href="ashikaga-flood-incidents.csv" download>一覧をCSVで保存</a></p>
 <div class="table-wrap"><table><thead><tr><th>日時</th><th>場所</th><th>被害</th><th>確度</th><th>投稿元</th></tr></thead><tbody id="rows"></tbody></table></div>
 </main>
@@ -752,6 +752,9 @@ incidents.push(
  {"id":38,"time":"2026-07-20 16:00","source":"栃木県（災害情報第12報）","place":"県道219号 松田葉鹿線・馬打橋付近","damage":"道路規制・片側交互通行","status":"片側交互通行は7月20日16:00解除","confidence":"高","lat":36.398274,"lon":139.431758,"precision":"施設周辺概略点","url":"https://portal.bousai-tochigi.jp/Disaster/DisasterDetails/202600313.html","note":"栃木県第12報で解除を確認"},
  {"id":39,"time":"2026-07-19 20:21","source":"栃木県（災害情報第12報）","place":"県道227号 小俣桐生線・小俣町〜小俣小学校前","damage":"通行止め","status":"通行止めは7月19日20:21解除","confidence":"高","lat":36.375378,"lon":139.376663,"precision":"施設・路線代表点","url":"https://portal.bousai-tochigi.jp/Disaster/DisasterDetails/202600313.html","note":"栃木県第12報で解除を確認"}
 );
+[1,24,25,26,27,28,29,30,31,35,36].forEach(id=>Object.assign(incidents.find(d=>d.id===id),{note:"7月27日に足利市公式ページを再確認（一覧は7月24日更新）。通行止め継続"}));
+[8,32,33].forEach(id=>Object.assign(incidents.find(d=>d.id===id),{note:"7月27日に足利市公式ページを再確認。林道通行止め継続、解除発表は未確認"}));
+Object.assign(incidents.find(d=>d.id===37),{note:"7月27日に栃木県第12報を再確認。片側交互通行の解除発表は未確認"});
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const category=d=>d.damage.includes("護岸")?"bank":d.damage.includes("陥没")||d.damage.includes("損壊")?"road":d.damage.includes("土砂")?"landslide":d.damage.includes("道路規制")||d.damage.includes("通行止め")&&!d.damage.includes("冠水")?"closed":"flood";
 const colors={flood:"#1677d2",closed:"#e06a16",road:"#278c4b",landslide:"#b34276",bank:"#7252c7"};
