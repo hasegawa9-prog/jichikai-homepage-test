@@ -659,6 +659,70 @@ h3 {
   margin-top: 0.2rem;
 }
 
+.topic-feature {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto 3rem;
+  padding: clamp(1.2rem, 3vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.topic-video {
+  min-width: 0;
+}
+
+.topic-video video {
+  display: block;
+  width: min(100%, 24rem);
+  max-height: 38rem;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #1d1717;
+  box-shadow: 0 14px 34px rgba(47, 34, 34, 0.18);
+}
+
+.topic-video p {
+  max-width: 28rem;
+  margin: 0.65rem auto 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.topic-copy {
+  min-width: 0;
+}
+
+.topic-label {
+  display: inline-flex;
+  margin: 0 0 0.6rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  color: white;
+  background: var(--green);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.topic-copy h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1.35;
+}
+
+.topic-copy p:not(.topic-label) {
+  margin: 0.8rem 0 0;
+  color: #594542;
+}
+
 .quick-actions {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1347,6 +1411,7 @@ h3 {
 
   .hero-section,
   .page-hero,
+  .topic-feature,
   .split-layout,
   .disaster-band,
   .life-section {
@@ -1457,12 +1522,19 @@ h3 {
   .hero-section,
   .page-hero,
   .notice-strip,
+  .topic-feature,
   .quick-actions,
   .content-band,
   .split-layout,
   .disaster-band,
   .life-section {
     padding-inline: 1rem;
+  }
+
+  .topic-feature {
+    margin-inline: 0.65rem;
+    padding-block: 1.2rem;
+    border-radius: 14px;
   }
 
   .hero-copy,
