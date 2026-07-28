@@ -209,7 +209,8 @@ input {
   padding: clamp(4.5rem, 9vw, 7rem) 1.2rem 3rem;
 }
 
-.notice-strip {
+.notice-strip,
+.flood-record-archive {
   display: grid;
   gap: 0.9rem;
   max-width: 1180px;
@@ -223,6 +224,34 @@ input {
     #fff4f1;
   color: #4a1714;
   box-shadow: 0 16px 38px rgba(95, 31, 26, 0.1);
+}
+
+.flood-record-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.flood-record-archive {
+  margin: 0;
+}
+
+.flood-record-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.6fr);
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.flood-record-header h2,
+.flood-record-header p {
+  margin: 0;
+}
+
+.flood-record-header h2 {
+  margin-bottom: 0.35rem;
+  color: #5b1b17;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.35;
 }
 
 .flood-alert-header {
@@ -252,6 +281,7 @@ input {
 }
 
 .notice-strip a,
+.flood-record-archive a,
 .text-link {
   color: var(--green);
   font-weight: 900;
@@ -259,7 +289,8 @@ input {
 }
 
 .disaster-portal-link,
-.notice-strip .ryomo-flood-link {
+.notice-strip .ryomo-flood-link,
+.flood-record-archive .ryomo-flood-link {
   display: grid;
   place-content: center;
   min-height: 3.7rem;
@@ -275,7 +306,8 @@ input {
   background: rgba(255, 255, 255, 0.78);
 }
 
-.notice-strip .ryomo-flood-link {
+.notice-strip .ryomo-flood-link,
+.flood-record-archive .ryomo-flood-link {
   display: grid;
   gap: 0.1rem;
   color: white;
@@ -288,23 +320,28 @@ input {
 .disaster-portal-link:hover,
 .disaster-portal-link:focus-visible,
 .notice-strip .ryomo-flood-link:hover,
-.notice-strip .ryomo-flood-link:focus-visible {
+.notice-strip .ryomo-flood-link:focus-visible,
+.flood-record-archive .ryomo-flood-link:hover,
+.flood-record-archive .ryomo-flood-link:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 11px 24px rgba(95, 31, 26, 0.18);
 }
 
-.notice-strip .ryomo-flood-link > span {
+.notice-strip .ryomo-flood-link > span,
+.flood-record-archive .ryomo-flood-link > span {
   color: white;
   font-size: clamp(1.25rem, 2.4vw, 1.7rem);
 }
 
-.notice-strip .ryomo-flood-link > small {
+.notice-strip .ryomo-flood-link > small,
+.flood-record-archive .ryomo-flood-link > small {
   color: #ffe4df;
   font-size: clamp(0.8rem, 1.4vw, 1rem);
   font-weight: 800;
 }
 
-.notice-strip .flood-summary {
+.notice-strip .flood-summary,
+.flood-record-archive .flood-summary {
   margin: 0;
   padding: 1rem 1.1rem;
   border: 1px solid #ead0cb;
@@ -1255,6 +1292,46 @@ h3 {
   border-block: 1px solid var(--line);
 }
 
+.disaster-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.flood-record-banner {
+  display: grid;
+  gap: 0.15rem;
+  border: 1px solid #d7aaa4;
+  border-left: 6px solid #a92d25;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  color: #5b1b17;
+  background: linear-gradient(135deg, #fff7f4, #f8e3dd);
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(95, 31, 26, 0.09);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.flood-record-banner:hover,
+.flood-record-banner:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(95, 31, 26, 0.14);
+}
+
+.flood-record-banner span {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.flood-record-banner small {
+  color: #76504c;
+  font-weight: 800;
+}
+
+.disaster-actions .download-link {
+  justify-content: center;
+}
+
 .safety-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1428,6 +1505,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .flood-record-header {
+    grid-template-columns: 1fr;
+  }
+
   .flood-alert-header {
     grid-template-columns: 1fr 1fr;
   }
@@ -1487,17 +1568,23 @@ h3 {
     border-radius: 15px;
   }
 
+  .flood-record-archive {
+    border-radius: 15px;
+  }
+
   .flood-alert-header {
     grid-template-columns: 1fr;
   }
 
   .flood-alert-title,
   .disaster-portal-link,
-  .notice-strip .ryomo-flood-link {
+  .notice-strip .ryomo-flood-link,
+  .flood-record-archive .ryomo-flood-link {
     grid-column: 1;
   }
 
   .notice-strip .flood-summary,
+  .flood-record-archive .flood-summary,
   .volunteer-summary,
   .disaster-news-summary {
     padding: 0.9rem;
