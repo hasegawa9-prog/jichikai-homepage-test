@@ -204,9 +204,9 @@ input {
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
   max-width: 1180px;
-  min-height: calc(100vh - 9rem);
+  min-height: auto;
   margin: 0 auto;
-  padding: clamp(4.5rem, 9vw, 7rem) 1.2rem 3rem;
+  padding: clamp(1.6rem, 3vw, 2.8rem) 1.2rem clamp(1rem, 2vw, 1.6rem);
 }
 
 .notice-strip,
@@ -698,9 +698,9 @@ h3 {
 
 .topic-feature {
   display: grid;
-  grid-template-columns: minmax(16rem, 0.78fr) minmax(0, 1.22fr);
+  grid-template-columns: minmax(0, 1.22fr) minmax(16rem, 0.78fr);
   gap: clamp(1.5rem, 4vw, 3.5rem);
-  align-items: center;
+  align-items: start;
   max-width: 1180px;
   margin: 0 auto 3rem;
   padding: clamp(1.2rem, 3vw, 2.25rem);
@@ -739,14 +739,15 @@ h3 {
 
 .topic-label {
   display: inline-flex;
-  margin: 0 0 0.6rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 8px;
   color: white;
   background: var(--green);
-  font-size: 0.78rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
+  line-height: 1.2;
 }
 
 .topic-copy h2 {
