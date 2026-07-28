@@ -1500,6 +1500,14 @@ h3 {
     padding-top: 3rem;
   }
 
+  .topic-copy {
+    order: 1;
+  }
+
+  .topic-video {
+    order: 2;
+  }
+
   .notice-strip,
   .emergency-panel {
     grid-template-columns: 1fr;
