@@ -761,6 +761,46 @@ h3 {
   color: #594542;
 }
 
+.topic-archive {
+  max-width: 1180px;
+  margin: 0 auto 3rem;
+  padding: 0 1.2rem;
+}
+
+.topic-archive .month-banner {
+  margin-bottom: 0.75rem;
+}
+
+.topic-archive-panel {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.topic-archive-panel summary {
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  color: var(--brown);
+  font-weight: 900;
+  list-style-position: inside;
+}
+
+.topic-archive-panel summary:hover,
+.topic-archive-panel summary:focus-visible {
+  background: var(--paper);
+  outline: none;
+}
+
+.topic-feature-archive {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .quick-actions {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
