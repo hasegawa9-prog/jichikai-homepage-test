@@ -51,3 +51,12 @@ searchForm?.addEventListener("submit", (event) => {
     searchMessage.textContent = `「${query}」は見つかりませんでした。回覧板やお知らせも確認してください。`;
   }
 });
+
+// Keep local PDF documents inside the site's viewer so visitors can return easily.
+document.querySelectorAll('a[href$=".pdf"]').forEach((link) => {
+  const rawHref = link.getAttribute("href");
+  if (!rawHref || rawHref.startsWith("http") || rawHref.startsWith("//")) return;
+
+  const page = `${window.location.pathname.split("/").pop() || "index.html"}`;
+  link.href = `pdf-viewer.html?file=${encodeURIComponent(rawHref)}&from=${encodeURIComponent(page)}`;
+});

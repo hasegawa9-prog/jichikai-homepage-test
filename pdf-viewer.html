@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>資料を表示 | 葉鹿下町自治会</title>
+    <meta name="description" content="葉鹿下町自治会の回覧板資料を表示します。" />
+    <link rel="stylesheet" href="styles.css?v=20261003-pdf-viewer" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="メインメニュー">
+        <a class="brand" href="index.html" aria-label="葉鹿下町自治会 ホーム">
+          <span class="brand-mark" aria-hidden="true">葉</span>
+          <span>
+            <strong>葉鹿下町自治会</strong>
+            <small>栃木県足利市</small>
+          </span>
+        </a>
+        <a class="back-link viewer-back-link" href="circular.html">回覧板へ戻る</a>
+      </nav>
+    </header>
+
+    <main id="main" class="pdf-viewer-page">
+      <section class="pdf-viewer-head" aria-labelledby="pdf-title">
+        <a class="back-link" href="circular.html">← 回覧板へ戻る</a>
+        <p class="eyebrow">Circular document</p>
+        <h1 id="pdf-title">回覧板資料</h1>
+        <p class="pdf-viewer-note">確認が終わったら、上の「回覧板へ戻る」から一覧に戻れます。</p>
+      </section>
+      <section class="pdf-frame-wrap" aria-label="PDF資料">
+        <p class="pdf-error" hidden>資料を表示できませんでした。回覧板へ戻って、もう一度お試しください。</p>
+        <iframe id="pdf-frame" title="回覧板資料のPDF" src="about:blank"></iframe>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get("file");
+      const from = params.get("from");
+      const frame = document.querySelector("#pdf-frame");
+      const error = document.querySelector(".pdf-error");
+      const title = document.querySelector("#pdf-title");
+      const safeBack = from === "index.html" || from === "circular.html" ? from : "circular.html";
+
+      document.querySelectorAll(".viewer-back-link, .pdf-viewer-head .back-link").forEach((link) => {
+        link.href = safeBack;
+      });
+
+      if (file && file.startsWith("documents/") && file.endsWith(".pdf")) {
+        frame.src = file;
+        const name = file.split("/").pop().replace(/\.pdf$/i, "").replace(/[-_]+/g, " ");
+        title.textContent = name || "回覧板資料";
+        document.title = `${title.textContent} | 葉鹿下町自治会`;
+      } else {
+        frame.hidden = true;
+        error.hidden = false;
+      }
+    </script>
+  </body>
+</html>
