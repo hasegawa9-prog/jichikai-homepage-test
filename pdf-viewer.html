@@ -31,18 +31,24 @@
         <p class="pdf-viewer-note">確認が終わったら、上の「回覧板へ戻る」から一覧に戻れます。</p>
       </section>
       <section class="pdf-frame-wrap" aria-label="PDF資料">
+        <p id="pdf-loading" class="pdf-loading">資料を読み込んでいます…</p>
         <p class="pdf-error" hidden>資料を表示できませんでした。回覧板へ戻って、もう一度お試しください。</p>
-        <iframe id="pdf-frame" title="回覧板資料のPDF" src="about:blank"></iframe>
+        <div id="pdf-pages" class="pdf-pages" aria-live="polite"></div>
+        <p class="pdf-original-link"><a id="pdf-original" class="text-link" href="#">PDFを別画面で開く</a></p>
       </section>
     </main>
 
-    <script>
+    <script type="module">
+      import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
+
       const params = new URLSearchParams(window.location.search);
       const file = params.get("file");
       const from = params.get("from");
       const requestedTitle = params.get("title");
-      const frame = document.querySelector("#pdf-frame");
+      const pages = document.querySelector("#pdf-pages");
+      const loading = document.querySelector("#pdf-loading");
       const error = document.querySelector(".pdf-error");
+      const original = document.querySelector("#pdf-original");
       const title = document.querySelector("#pdf-title");
       const safeBack = from === "index.html" || from === "circular.html" ? from : "circular.html";
 
@@ -51,13 +57,50 @@
       });
 
       if (file && file.startsWith("documents/") && file.endsWith(".pdf")) {
-        frame.src = file;
+        original.href = file;
         const name = file.split("/").pop().replace(/\.pdf$/i, "").replace(/[-_]+/g, " ");
         title.textContent = requestedTitle || name || "回覧板資料";
         document.title = `${title.textContent} | 葉鹿下町自治会`;
+
+        try {
+          pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
+          const pdf = await pdfjsLib.getDocument(file).promise;
+
+          for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
+            const page = await pdf.getPage(pageNumber);
+            const baseViewport = page.getViewport({ scale: 1 });
+            const availableWidth = Math.max(pages.clientWidth - 2, 280);
+            const cssScale = Math.min(1.6, availableWidth / baseViewport.width);
+            const viewport = page.getViewport({ scale: cssScale });
+            const outputScale = window.devicePixelRatio || 1;
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d", { alpha: false });
+            canvas.className = "pdf-page-image";
+            canvas.setAttribute("aria-label", `${pageNumber}ページ目`);
+            canvas.width = Math.floor(viewport.width * outputScale);
+            canvas.height = Math.floor(viewport.height * outputScale);
+            canvas.style.width = `${viewport.width}px`;
+            canvas.style.height = `${viewport.height}px`;
+            pages.append(canvas);
+
+            await page.render({
+              canvasContext: context,
+              viewport,
+              transform: outputScale !== 1 ? [outputScale, 0, 0, outputScale, 0, 0] : null,
+            }).promise;
+          }
+
+          loading.hidden = true;
+        } catch (loadError) {
+          console.error(loadError);
+          loading.hidden = true;
+          error.hidden = false;
+          original.hidden = false;
+        }
       } else {
-        frame.hidden = true;
+        loading.hidden = true;
         error.hidden = false;
+        original.hidden = true;
       }
     </script>
   </body>

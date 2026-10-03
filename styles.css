@@ -996,19 +996,36 @@ h3 {
   background: #f5f1e8;
 }
 
-.pdf-frame-wrap iframe {
-  display: block;
+.pdf-loading,
+.pdf-error {
+  margin: 0.75rem;
+  color: var(--muted);
+  font-weight: 800;
+  text-align: center;
+}
+
+.pdf-pages {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.pdf-page-image {
   width: 100%;
-  height: min(78vh, 68rem);
-  min-height: 34rem;
+  max-width: 100%;
+  height: auto;
   border: 0;
   background: white;
+  box-shadow: 0 2px 10px rgba(47, 34, 34, 0.12);
 }
 
 .pdf-error {
-  margin: 1rem;
   color: var(--red);
-  font-weight: 800;
+}
+
+.pdf-original-link {
+  margin: 1rem 0 0;
+  text-align: center;
 }
 
 .viewer-back-link {
