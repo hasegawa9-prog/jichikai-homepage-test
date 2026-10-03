@@ -58,5 +58,6 @@ document.querySelectorAll('a[href$=".pdf"]').forEach((link) => {
   if (!rawHref || rawHref.startsWith("http") || rawHref.startsWith("//")) return;
 
   const page = `${window.location.pathname.split("/").pop() || "index.html"}`;
-  link.href = `pdf-viewer.html?file=${encodeURIComponent(rawHref)}&from=${encodeURIComponent(page)}`;
+  const label = link.querySelector("strong")?.textContent?.trim() || "回覧板資料";
+  link.href = `pdf-viewer.html?file=${encodeURIComponent(rawHref)}&from=${encodeURIComponent(page)}&title=${encodeURIComponent(label)}`;
 });

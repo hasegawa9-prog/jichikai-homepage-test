@@ -40,6 +40,7 @@
       const params = new URLSearchParams(window.location.search);
       const file = params.get("file");
       const from = params.get("from");
+      const requestedTitle = params.get("title");
       const frame = document.querySelector("#pdf-frame");
       const error = document.querySelector(".pdf-error");
       const title = document.querySelector("#pdf-title");
@@ -52,7 +53,7 @@
       if (file && file.startsWith("documents/") && file.endsWith(".pdf")) {
         frame.src = file;
         const name = file.split("/").pop().replace(/\.pdf$/i, "").replace(/[-_]+/g, " ");
-        title.textContent = name || "回覧板資料";
+        title.textContent = requestedTitle || name || "回覧板資料";
         document.title = `${title.textContent} | 葉鹿下町自治会`;
       } else {
         frame.hidden = true;
