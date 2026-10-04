@@ -28,6 +28,39 @@ body {
   line-height: 1.6;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main > .hero-section {
+  order: 0;
+}
+
+main > .topic-current {
+  order: 1;
+}
+
+main > #circular {
+  order: 2;
+}
+
+main > .quick-actions {
+  order: 3;
+}
+
+main > .topic-archive {
+  order: 4;
+}
+
+main > #disaster {
+  order: 5;
+}
+
+main > #life {
+  order: 6;
+}
+
 a {
   color: inherit;
 }
